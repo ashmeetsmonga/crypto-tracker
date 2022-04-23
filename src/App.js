@@ -1,8 +1,18 @@
+import { Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import Header from "./components/Header";
+import HomePage from "./pages/HomePage";
+import CoinsPage from "./pages/CoinsPage";
+
 function App() {
 	return (
-		<div>
-			<h1 className='text-3xl font-bold underline'>Crypto-Tracker</h1>
-		</div>
+		<BrowserRouter>
+			<div className='bg-gray-800 text-white min-h-screen'>
+				<Header />
+				<Route path='/' exact component={HomePage} />
+				<Route path='/coins/:id' component={CoinsPage} />
+			</div>
+		</BrowserRouter>
 	);
 }
 

@@ -7,7 +7,7 @@ import CoinsPage from "./pages/CoinsPage";
 function App() {
 	return (
 		<BrowserRouter>
-			<div className='bg-gray-800 text-white min-h-screen'>
+			<div className='bg-darkGray text-white min-h-screen'>
 				<Header />
 				<Route path='/' exact component={HomePage} />
 				<Route path='/coins/:id' component={CoinsPage} />

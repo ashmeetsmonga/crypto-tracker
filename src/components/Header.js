@@ -16,7 +16,7 @@ const Header = () => {
 				CryptoTracker
 			</h2>
 			<select
-				className='bg-gray-800 outline-none'
+				className='bg-darkGray outline-none'
 				value={currency}
 				onChange={(e) => setCurrency(e.target.value)}
 			>

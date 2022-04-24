@@ -39,7 +39,7 @@ const Carousel = () => {
 					style={{ WebkitTransform: "translateZ(0)" }}
 				/>
 				<div className='flex'>
-					<p className='mr-2 text-lg'>{coin?.name}</p>
+					<p className='mr-2 text-lg text-white'>{coin?.name}</p>
 					<p className={profit ? "text-green-600" : "text-red-600"}>
 						{profit && "+"}
 						{coin?.price_change_percentage_24h?.toFixed(2)}%

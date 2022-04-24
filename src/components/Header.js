@@ -8,7 +8,7 @@ const Header = () => {
 	const { currency, setCurrency } = CryptoState();
 	console.log(currency);
 	return (
-		<div className='container p-4 bg-transparent static mx-auto flex justify-between'>
+		<div className='w-screen py-4 px-8 bg-darkGray fixed top-0 flex justify-between'>
 			<h2
 				className='text-2xl font-bold text-gold cursor-pointer'
 				onClick={() => history.push("/")}

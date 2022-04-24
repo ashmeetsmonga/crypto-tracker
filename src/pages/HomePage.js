@@ -4,7 +4,7 @@ import CoinsTable from "../components/CoinsTable";
 
 const HomePage = () => {
 	return (
-		<div>
+		<div className='mt-4'>
 			<Banner />
 			<CoinsTable />
 		</div>

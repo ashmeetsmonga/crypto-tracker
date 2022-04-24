@@ -7,10 +7,11 @@ import CoinsPage from "./pages/CoinsPage";
 function App() {
 	return (
 		<BrowserRouter>
-			<div className='text-white min-h-screen'>
+			<div className='text-white min-h-screen relative'>
 				<Header />
 				<Route path='/' exact component={HomePage} />
 				<Route path='/coins/:id' component={CoinsPage} />
+				<div className="bg-[url('../public/banner.jpg')] -z-10 w-full opacity-20 absolute top-0 h-full"></div>
 			</div>
 		</BrowserRouter>
 	);

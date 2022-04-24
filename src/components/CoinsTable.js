@@ -45,8 +45,8 @@ const CoinsTable = () => {
 			<div
 				key={i}
 				className={`w-[25px] text-center h-[25px] text-gold cursor-pointer ${
-					i === page && "bg-gray-600 rounded-xl"
-				}`}
+					i === page && "bg-gray-800 rounded-xl"
+				} hover:bg-gray-800 rounded-xl transition-all`}
 				onClick={() => {
 					console.log(i + " pressed");
 					setPage(i);

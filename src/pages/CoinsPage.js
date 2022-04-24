@@ -23,11 +23,13 @@ const CoinsPage = () => {
 		setCoin(data);
 	};
 
+	if (!coin) return <div>Loading...</div>;
+
 	return (
 		coin && (
 			<div className='container mx-auto flex flex-col items-center lg:flex-row lg:justify-between lg:space-x-4'>
 				{/* Sidebar */}
-				<div className='flex mt-[75px] flex-col w-full px-3 lg:w-1/4 items-center lg:mt-0'>
+				<div className='flex mt-[75px] flex-col w-full px-3 items-center lg:w-1/4 lg:mt-0 lg:h-screen lg:justify-center'>
 					{/* Image */}
 					<img
 						className='w-[200px]'

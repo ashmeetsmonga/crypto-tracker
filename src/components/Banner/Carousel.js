@@ -31,7 +31,10 @@ const Carousel = () => {
 	const items = trending.map((coin) => {
 		const profit = coin?.price_change_percentage_24h > 0;
 		return (
-			<Link to={"#"} className='flex flex-col items-center space-y-1'>
+			<Link
+				to={`/coins/${coin?.id}`}
+				className='flex flex-col items-center space-y-1'
+			>
 				<img
 					className='w-20 h-20 mb-2'
 					src={coin?.image}

@@ -6,7 +6,7 @@ import CoinsPage from "./pages/CoinsPage";
 
 function App() {
 	return (
-		<BrowserRouter>
+		<BrowserRouter basename='crypto-tracker'>
 			<div className='text-white min-h-screen relative'>
 				<Header />
 				<Route path='/' exact component={HomePage} />

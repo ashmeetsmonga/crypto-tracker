@@ -1,5 +1,6 @@
+import { clear } from "@testing-library/user-event/dist/clear";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { CoinList } from "../config/api";
 import { CryptoState } from "../CryptoContext";
@@ -11,6 +12,8 @@ const CoinsTable = () => {
 	const [loading, setLoading] = useState(false);
 	const [search, setSearch] = useState("");
 	const [page, setPage] = useState(1);
+
+	const searchRef = useRef();
 
 	const history = useHistory();
 
@@ -57,6 +60,17 @@ const CoinsTable = () => {
 		));
 	};
 
+	function debounced(f) {
+		let myTimeout;
+
+		return function () {
+			if (myTimeout) clearTimeout(myTimeout);
+			myTimeout = setTimeout(() => {
+				f();
+			}, 300);
+		};
+	}
+
 	return (
 		<div className='flex flex-col container mx-auto items-center mt-4 space-y-4 py-4'>
 			<h2 className='text-3xl font-thin'>
@@ -67,8 +81,8 @@ const CoinsTable = () => {
 				className='w-[90%] bg-darkGray text-white border p-3 text-lg border-gray-500 outline-none rounded focus:border-white'
 				type='text'
 				placeholder='Search for a cryptocurrency...'
-				value={search}
-				onChange={(e) => setSearch(e.target.value)}
+				ref={searchRef}
+				onChange={debounced(() => setSearch(searchRef.current.value))}
 			/>
 			<table className='table-fixed w-[90%]'>
 				<thead className=''>
